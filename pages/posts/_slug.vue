@@ -47,7 +47,7 @@ export default {
   layout: "post_detail",
   async asyncData({params}) {
     console.log(params)
-    const post = await axios.get(`http://127.0.0.1:8000/api/posts/${params.slug}`);
+    const post = await axios.get(`http://spa--blog.herokuapp.com/api/posts/${params.slug}`);
     return {
       post: post.data,
     }
