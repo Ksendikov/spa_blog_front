@@ -26,7 +26,7 @@
           <hr>
           <Comments />
         </div>
-        <Aside />
+        <Aside :tags=tags :aside=aside />
       </div>
     </div>
   </div>
@@ -46,10 +46,13 @@ export default {
     },
   layout: "post_detail",
   async asyncData({params}) {
-    console.log(params)
     const post = await axios.get(`http://spa--blog.herokuapp.com/api/posts/${params.slug}`);
+    const tags = await axios.get(`http://spa--blog.herokuapp.com/api/tags/`);
+    const aside = await axios.get('http://spa--blog.herokuapp.com/api/aside/');
     return {
       post: post.data,
+      tags: tags.data,
+      aside: aside.data,
     }
   },
 }
