@@ -35,7 +35,7 @@ export default {
     }
   },
   async asyncData({route}) {
-    const { data } = await axios.get(`http://spa--blog.herokuapp.com/api/posts/?q=${route.query.q}`);
+    const { data } = await axios.get(`https://spa--blog.herokuapp.com/api/posts/?q=${route.query.q}`);
     return {
       posts: data,
     }
