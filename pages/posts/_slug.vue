@@ -24,7 +24,7 @@
             <div class="p-2">Опубликовано: {{ post.created_at }}</div>
           </div>
           <hr>
-          <Comments />
+          <Comments :comments="comments" :post="post"/>
         </div>
         <Aside :tags=tags :aside=aside />
       </div>
@@ -48,11 +48,13 @@ export default {
   async asyncData({params}) {
     const post = await axios.get(`https://spa--blog.herokuapp.com/api/posts/${params.slug}`);
     const tags = await axios.get(`https://spa--blog.herokuapp.com/api/tags/`);
-    const aside = await axios.get('https://spa--blog.herokuapp.com/api/aside/');
+    const aside = await axios.get(`https://spa--blog.herokuapp.com/api/aside/`);
+    const comments =await axios.get(`https://spa--blog.herokuapp.com/api/comments/${params.slug}`)
     return {
       post: post.data,
       tags: tags.data,
       aside: aside.data,
+      comments: comments.data
     }
   },
 }
