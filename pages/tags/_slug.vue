@@ -42,8 +42,8 @@ export default {
   components:{Header},
   layout: "post_detail",
   async asyncData({params}) {
-    const { data } = await axios.get(`http://spa--blog.herokuapp.com/api/tags/${params.slug}`);
-    const tags = await axios.get(`http://spa--blog.herokuapp.com/api/tags/`);
+    const { data } = await axios.get(`https://spa--blog.herokuapp.com/api/tags/${params.slug}`);
+    const tags = await axios.get(`https://spa--blog.herokuapp.com/api/tags/`);
     return {
       posts: data.results,
       title: `#${params.slug}`,
