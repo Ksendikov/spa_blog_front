@@ -32,7 +32,7 @@ import Default from "@/layouts/default";
 export default {
   components: {Default},
   async asyncData(ctx) {
-    const { data } = await axios.get(`http://spa--blog.herokuapp.com/api/posts/`);
+    const { data } = await axios.get(`https://spa--blog.herokuapp.com/api/posts/`);
     return {
       posts: data.results,
     }

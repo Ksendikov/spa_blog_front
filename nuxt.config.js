@@ -68,9 +68,9 @@ export default {
     }
   },
   axios: {
-    baseURL: 'http://spa--blog.herokuapp.com',
+    baseURL: 'https://spa--blog.herokuapp.com',
     credentials: false
   },
   build: {
   }
-}
+} 

@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     async searchPosts() {
-      this.posts = await axios.get(`http://spa--blog.herokuapp.com/api/posts/?search=${this.q}`);
+      this.posts = await axios.get(`https://spa--blog.herokuapp.com/api/posts/?search=${this.q}`);
       this.$router.push("/search?q="+this.q);
       this.$emit('searchPosts', this.posts.data);
     },
