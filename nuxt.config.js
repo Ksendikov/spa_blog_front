@@ -43,6 +43,9 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
   ],
+  plugins:[
+    {src: '~/plugins/vuelidate'}
+  ],
   auth: {
     strategies: {
       local: {
